@@ -54,7 +54,7 @@ setInterval(() => {
   const now = Date.now();
   readingList = readingList.filter(url => {
     const timestamp = localStorage.getItem(url);
-    if (timestamp && now - parseInt(timestamp) > 604800000) {
+    if (timestamp && now - parseInt(timestamp) > 60) {
       localStorage.removeItem(url);
       return false;
     }
