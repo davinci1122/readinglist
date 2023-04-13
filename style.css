@@ -1,0 +1,25 @@
+h1 {
+  text-align: center;
+}
+form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+input[type="url"] {
+  flex: 1;
+  margin-right: 10px;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+li {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+li button {
+  margin-left: 10px;
+}
