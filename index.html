@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Reading List</title>
-  <link href="style.css" media="all" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading List App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>My Reading List</h1>
-  <form>
-    <label for="url">Add a URL:</label>
-    <input type="url" id="url" name="url" required>
-    <button type="submit">Add to List</button>
-  </form>
-  <ul id="list"></ul>
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Reading List App</h1>
+        <form id="add-form">
+            <input type="text" id="url-input" placeholder="Enter URL...">
+            <button type="submit" id="add-button">Add</button>
+        </form>
+        <ul id="list"></ul>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@firebaseui/auth@5.15.1/firebaseui.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
