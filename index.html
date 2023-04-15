@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reading List App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>リーディングリスト</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Reading List App</h1>
-        <form id="add-form">
-            <input type="text" id="url-input" placeholder="Enter URL...">
-            <button type="submit" id="add-button">Add</button>
-        </form>
-        <ul id="list"></ul>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@firebaseui/auth@5.15.1/firebaseui.js"></script>
-    <script src="app.js"></script>
+  <div class="container">
+    <h1>リーディングリスト</h1>
+    <form id="add-form">
+      <label for="url-input">URLを追加してください:</label>
+      <input type="url" id="url-input" required>
+      <button type="submit">追加</button>
+    </form>
+    <ul id="url-list"></ul>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
