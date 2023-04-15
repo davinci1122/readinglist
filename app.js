@@ -11,7 +11,15 @@ function renderList() {
     const li = document.createElement("li");
     const a = document.createElement("a");
     const button = document.createElement("button");
-
+// add click event to list item
+li.addEventListener("click", () => {
+  // remove clicked url from array
+  urls.splice(index, 1);
+  // update localStorage
+  localStorage.setItem("urls", JSON.stringify(urls));
+  // render updated list
+  renderList();
+});
     a.href = url;
     a.target = "_blank";
     a.textContent = `${index + 1}. ${url}`;
@@ -36,16 +44,30 @@ addForm.addEventListener("submit", (e) => {
 renderList();
 });
 
+if (Notification.permission !== "granted") {
+  Notification.requestPermission();
+}
+
+function showNotification(title, options) {
+  if (Notification.permission === "granted") {
+    const notification = new Notification(title, options);
+  }
+}
 // delete URLs older than 1 week
 setInterval(() => {
-const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+const oneWeekAgo = new Date(Date.now() - 1*60*1000);
 urls = urls.filter((url) => {
-const addedDate = new Date(url.added);
-return addedDate > oneWeekAgo;
+  const addedDate = new Date(url.added);
+  const isOld = addedDate <= oneWeekAgo;
+  if (isOld) {
+    const notification = new Notification("リンクが削除されました", {
+      body: url.link,
+    });
+  }
+  return !isOld;
 });
 localStorage.setItem("urls", JSON.stringify(urls));
 renderList();
 }, 24 * 60 * 60 * 1000);
 
-renderList();
- 
+ renderList();
