@@ -62,3 +62,44 @@ li a {
 li a:hover {
     text-decoration: underline;
 }
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+  }
+  #list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  #list li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  #list li a {
+    color: #333;
+    text-decoration: none;
+  }
+  #list li a:hover {
+    text-decoration: underline;
+  }
+  #add-form input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 5px;
+  }
+  #add-form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  #add-form input[type="submit"]:hover {
+    background-color: #555;
+  }

@@ -9,10 +9,12 @@ function renderList() {
   urlList.innerHTML = "";
   urls.forEach((url, index) => {
     const li = document.createElement("li");
-    const span = document.createElement("span");
+    const a = document.createElement("a");
     const button = document.createElement("button");
 
-    span.textContent = `${index + 1}. ${url}`;
+    a.href = url;
+    a.target = "_blank";
+    a.textContent = `${index + 1}. ${url}`;
     button.textContent = "削除";
     button.addEventListener("click", () => {
       urls.splice(index, 1);
@@ -20,7 +22,7 @@ function renderList() {
       renderList();
     });
 
-    li.appendChild(span);
+    li.appendChild(a);
     li.appendChild(button);
     urlList.appendChild(li);
   });
